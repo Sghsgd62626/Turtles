@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Черепашка</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="600" height="500"></canvas>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        // Панцирь
+        ctx.beginPath();
+        ctx.ellipse(300, 260, 150, 100, 0, 0, Math.PI * 2);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.strokeStyle = "darkgreen";
+        ctx.lineWidth = 5;
+        ctx.stroke();
+
+        // Голова
+        ctx.beginPath();
+        ctx.arc(300, 120, 55, 0, Math.PI * 2);
+        ctx.fillStyle = "lightgreen";
+        ctx.fill();
+        ctx.stroke();
+
+        // Лапки
+        function leg(x, y) {
+            ctx.beginPath();
+            ctx.ellipse(x, y, 35, 55, 0, 0, Math.PI * 2);
+            ctx.fillStyle = "lightgreen";
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        leg(155, 220);
+        leg(445, 220);
+        leg(180, 330);
+        leg(420, 330);
+
+        // Хвост
+        ctx.beginPath();
+        ctx.moveTo(300, 355);
+        ctx.lineTo(275, 410);
+        ctx.lineTo(325, 410);
+        ctx.closePath();
+        ctx.fillStyle = "lightgreen";
+        ctx.fill();
+        ctx.stroke();
+
+        // Глаза
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(280, 110, 7, 0, Math.PI * 2);
+        ctx.arc(320, 110, 7, 0, Math.PI * 2);
+        ctx.fill();
+    </script>
+</body>
+</html>
